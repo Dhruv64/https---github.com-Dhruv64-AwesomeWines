@@ -38,15 +38,19 @@
           <v-col sm="12" md="12">
             <v-row>
               <v-col v-for="wine in wines.slice(0, this.visible)" :key="wine.id" sm="6" md="3">
-                <v-card class="pa-8 card" outlined> 
-                  <v-img :src="wine.image" contain height="250px" class="card-image"> </v-img>
-                  <div class="card-footer">
-                  <v-card-title class="card-title">{{ wine.id }} - {{ wine.wine }}</v-card-title>
-                   <v-card-text class="card-text">Location :  {{wine.location}} </v-card-text>
-                  <v-card-subtitle class="card-text">Rating: {{ wine.rating.average }}<br/>
-                  <span class="success--text" >{{wine.rating.reviews}}</span>
-                  </v-card-subtitle></div>
-                </v-card>
+                <v-hover v-slot:default="{ hover }">
+                  <v-card class="pa-8 card" outlined
+                  :elevation="hover ? 15:2"
+                  > 
+                    <v-img :src="wine.image" contain height="250px" class="card-image"> </v-img>
+                    <div class="card-footer">
+                    <v-card-title class="card-title">{{ wine.id }} - {{ wine.wine }}</v-card-title>
+                    <v-card-text class="card-text">Location :  {{wine.location}} </v-card-text>
+                    <v-card-subtitle class="card-text">Rating: {{ wine.rating.average }}<br/>
+                    <span class="success--text" >{{wine.rating.reviews}}</span>
+                    </v-card-subtitle></div>
+                  </v-card>
+                </v-hover>
               </v-col>
               </v-row>
           </v-col>
@@ -87,7 +91,7 @@ export default{
             link : null,
             url: 'https://api.sampleapis.com/wines/reds',
             winetypes: [
-              "reds","whites", "sparkling", "rose" , "desert", "port"
+              "reds","whites", "sparkling", "rose" , "port"
             ]
             
         }

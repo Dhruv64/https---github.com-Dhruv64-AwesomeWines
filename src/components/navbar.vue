@@ -3,7 +3,7 @@
    
 <nav>
     <v-app-bar flat >
-        <v-app-bar-nav-icon
+        <!-- <v-app-bar-nav-icon
         @click="drawer=!drawer"
         fab
         depressed
@@ -12,6 +12,16 @@
             <v-icon color="grey">
                 mdi-menu
             </v-icon>
+        </v-app-bar-nav-icon> -->
+        <v-app-bar-nav-icon
+        fab
+        depressed
+        colour="white">
+            <v-img
+            height="75px"
+            contain
+            src="@/assets/NavbarLogo.png"
+            ></v-img>
         </v-app-bar-nav-icon>
         
         <v-toolbar-title class="text-uppercase grey--text">
