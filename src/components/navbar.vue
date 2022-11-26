@@ -13,14 +13,12 @@
                 mdi-menu
             </v-icon>
         </v-app-bar-nav-icon> -->
-        <v-app-bar-nav-icon
-        fab
-        depressed
-        colour="white">
+        <v-app-bar-nav-icon>
             <v-img
             height="75px"
             contain
             src="@/assets/NavbarLogo.png"
+            disable
             ></v-img>
         </v-app-bar-nav-icon>
         
